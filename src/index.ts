@@ -36,6 +36,7 @@ export {
 	vertexSubtract,
 	vertexIsNaN,
 	vertexInterpolate,
+	vertexArrayInterpolate,
 	vertexToString,
 	vertexInnerProduct,
 	vertexOuterProduct,
