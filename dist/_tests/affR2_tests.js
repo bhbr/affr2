@@ -1,4 +1,4 @@
-import { vertexCloseTo, vertexEquals } from '../vertex.js';
+import { vertexIsCloseTo, vertexEquals } from '../vertex.js';
 import { AssertionTest, BundledTest } from '@bhbr/tsts';
 export const vertexTest = new BundledTest({
     name: 'Vertex test',
@@ -7,7 +7,7 @@ export const vertexTest = new BundledTest({
             name: 'A vertex is close to itself',
             function: function () {
                 let v = [1, 2];
-                return vertexCloseTo(v, v);
+                return vertexIsCloseTo(v, v);
             }
         }),
         new AssertionTest({
@@ -20,4 +20,4 @@ export const vertexTest = new BundledTest({
     ]
 });
 vertexTest.run();
-//# sourceMappingURL=affR2_tests.js.map
+//# sourceMappingURL=affr2_tests.js.map

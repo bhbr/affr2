@@ -32,7 +32,7 @@ export function vertexNorm(v: vertex): number {
 	return Math.sqrt(vertexNorm2(v))
 }
 
-export function vertexCloseTo(v: vertex, w: vertex, tolerance: number = 1e-6): boolean {
+export function vertexIsCloseTo(v: vertex, w: vertex, tolerance: number = 1e-6): boolean {
 	if (vertexIsNaN(v)) { return false }
 	if (vertexIsNaN(w)) { return false }
 	if (!tolerance) { tolerance = 1 }
@@ -44,7 +44,7 @@ export function vertexIsZero(v: vertex): boolean {
 }
 
 export function vertexEquals(v: vertex, w: vertex): boolean {
-	return vertexCloseTo(v, w, 1e-6)
+	return vertexIsCloseTo(v, w, 1e-6)
 }
 
 export function vertexArrayEquals(va: vertexArray, wa: vertexArray): boolean {
@@ -123,11 +123,7 @@ export function vertexScaledBy(v: vertex, scale: number, center: vertex | undefi
 	return vertexAdd(rw, center)
 }
 
-function vertexCentrallyScaleBy(v: vertex, scale: number) {
-	vertexCopyFrom(v, vertexCentrallyScaledBy(v, scale))
-}
-
-export function vertexScaleBy(v: vertex, scale: number, center: vertex | undefined) {
+export function vertexCentrallyScaleBy(v: vertex, scale: number, center: vertex | undefined) {
 	if (center == undefined) {
 		vertexCopyFrom(v, vertexCentrallyScaledBy(v, scale))
 	}

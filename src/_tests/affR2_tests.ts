@@ -1,5 +1,5 @@
 
-import { vertexCloseTo, vertexEquals } from '../vertex.js'
+import { vertexIsCloseTo, vertexEquals } from '../vertex.js'
 import { AssertionTest, BundledTest } from '@bhbr/tsts'
 
 export const vertexTest = new BundledTest({
@@ -9,7 +9,7 @@ export const vertexTest = new BundledTest({
 			name: 'A vertex is close to itself',
 			function: function(): boolean {
 				let v = [1, 2]
-				return vertexCloseTo(v, v)
+				return vertexIsCloseTo(v, v)
 			}
 		}),
 
