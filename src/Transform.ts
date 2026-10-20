@@ -1,5 +1,6 @@
 
 import { BetterObject } from '@bhbr/better-things'
+import { deepCopy } from '@bhbr/copycat'
 import { TAU, PI, DEGREES } from './constants.js'
 import { vertex, vertexOrigin, vertexIsZero, vertexX, vertexY, vertexOpposite, vertexAdd, vertexSubtract, vertexCentrallyRotatedBy, vertexCentrallyScaledBy, vertexTranslatedBy, vertexInterpolate } from './vertex.js'
 
@@ -85,9 +86,7 @@ A Transform describes the positioning of a Mobject relative to its parent. Trans
 	}
 
 	copy(): Transform {
-		let ct = new Transform()
-		ct.copyFrom(this)
-		return ct
+		return deepCopy(this)
 	}
 
 	rightComposedWith(t: Transform): Transform {

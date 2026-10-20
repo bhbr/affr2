@@ -1,6 +1,7 @@
 
-import { vertexIsCloseTo, vertexEquals } from '../vertex.js'
-import { AssertionTest, BundledTest } from '@bhbr/tsts'
+import { vertexIsCloseTo, vertexEquals, vertexOrigin, Transform, DummyTransform } from '../index.js'
+import { AssertionTest, BundledTest, ExecutionTest } from '@bhbr/tsts'
+import { BetterObject } from '@bhbr/better-things'
 
 export const vertexTest = new BundledTest({
 	name: 'Vertex test',
@@ -19,6 +20,75 @@ export const vertexTest = new BundledTest({
 				let v = [1, 2]
 				return vertexEquals(v, v)
 			}
+		}),
+
+		new AssertionTest({
+			name: 'Vertex origin is [0, 0]',
+			function: function(): boolean {
+				let v = vertexOrigin()
+				return vertexEquals(v, [0, 0])
+			}
+		}),
+
+		 new ExecutionTest({
+			name: 'Dummy',
+			function: function() {
+				class Dummy extends BetterObject {
+					angle: number
+					defaults(): object {
+						return {
+							angle: 0
+						}
+					}
+				}
+				let d = new Dummy()
+			}
+		}),
+
+		new ExecutionTest({
+			name: 'DummyTransform can be instantiated with no arguments',
+			function: function() {
+				let t = new DummyTransform()
+			},
+			catchErrors: true
+		}),
+
+		new ExecutionTest({
+			name: 'DummyTransform can be copied from itself',
+			function: function() {
+				let t = new DummyTransform()
+				t.copyFrom(t)
+			},
+			catchErrors: true
+		}),
+
+		new ExecutionTest({
+			name: 'Transform can be instantiated with no arguments',
+			function: function() {
+				let t = new Transform()
+			},
+			catchErrors: true
+		}),
+
+		new ExecutionTest({
+			name: 'Transform can be instantiated with initial arguments',
+			function: function() {
+				let t = new Transform({
+					anchor: [0, 0],
+					angle: 0,
+					scale: 1,
+					shift: [0, 0]
+				})
+			},
+			catchErrors: true
+		}),
+
+		new ExecutionTest({
+			name: 'Transform.identity can be created',
+			function: function() {
+				let t = Transform.identity()
+			},
+			catchErrors: true
 		}),
 	]
 })

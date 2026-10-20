@@ -2,5 +2,5 @@
 *.tgz
 dist/*
 node_modules/*
-build/tsconfig.tsbuildinfo
+tsconfig.tsbuildinfo
 
