@@ -1,0 +1,38 @@
+{
+  "name": "@bhbr/affR2",
+  "version": "1.0.0",
+  "description": "Vertex operations in the affine plane (translations, rotations and scalings)",
+  "type": "module",
+  "main": "./dist/affR2.js",
+  "types": "./dist/affR2.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/affR2.d.ts",
+      "import": "./dist/affR2.js"
+    }
+  },
+  "files": [
+    "dist/",
+    "!dist/_tests/"
+  ],
+  "scripts": {
+    "build": "cd build && ./build.sh",
+    "test": "node dist/_tests/affR2_tests.js",
+    "prepack": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhbr/affR2"
+  },
+  "bugs": {
+    "url": "https://github.com/bhbr/affR2/issues"
+  },
+  "homepage": "https://github.com/bhbr/affR2#readme",
+  "keywords": [],
+  "author": "Ben Hambrecht",
+  "license": "ISC",
+  "dependencies": {
+    "@bhbr/better-things": "^1.0.2",
+    "@bhbr/tsts": "^1.1.3"
+  }
+}

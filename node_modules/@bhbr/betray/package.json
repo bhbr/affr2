@@ -1,0 +1,42 @@
+{
+  "name": "@bhbr/betray",
+  "version": "1.0.0",
+  "description": "Some convenience functions for handling array",
+  "type": "module",
+  "main": "./dist/betray.js",
+  "types": "./dist/betray.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/betray.d.ts",
+      "import": "./dist/betray.js"
+    }
+  },
+  "files": [
+    "dist/betray.js",
+    "dist/betray.d.ts",
+    "dist/betray.js.map",
+    "dist/betray.d.ts.map"
+  ],
+  "scripts": {
+    "build": "cd build && ./build.sh",
+    "test": "node dist/_tests/betray_tests.js",
+    "prepack": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhbr/betray"
+  },
+  "bugs": {
+    "url": "https://github.com/bhbr/betray/issues"
+  },
+  "homepage": "https://github.com/bhbr/betray#readme",
+  "keywords": [],
+  "author": "Ben Hambrecht",
+  "license": "ISC",
+  "dependencies": {
+    "@bhbr/copycat": "^1.0.0"
+  },
+  "devDependencies": {
+    "@bhbr/tsts": "^1.1.3"
+  }
+}
