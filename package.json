@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Vertex operations in the affine plane (translations, rotations and scalings)",
   "type": "module",
-  "main": "./dist/affr2.js",
-  "types": "./dist/affr2.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/affr2.d.ts",
-      "import": "./dist/affr2.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     }
   },
   "files": [
