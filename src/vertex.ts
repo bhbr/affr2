@@ -168,6 +168,16 @@ export function vertexInterpolate(v: vertex, w: vertex, weight: number): vertex 
 	return [v[0] + weight * (w[0] - v[0]), v[1] + weight * (w[1] - v[1])]
 }
 
+export function vertexArrayInterpolate(vtxArray1: vertexArray, vtxArray2: vertexArray, weight): vertexArray {
+	let interpolatedVertexArray: vertexArray = []
+	for (let i = 0; i < vtxArray1.length; i++) {
+		interpolatedVertexArray.push(
+			vertexInterpolate(vtxArray1[i], vtxArray2[i], weight)
+		)
+	}
+	return interpolatedVertexArray
+}
+
 export function vertexToString(v: vertex): string {
 	return `[${v[0]}, ${v[1]}]`
 }
@@ -178,16 +188,6 @@ export function vertexInnerProduct(v: vertex, w: vertex): number {
 
 export function vertexOuterProduct(v: vertex, w: vertex): number {
 	return v[0] * w[1] - v[1] * w[0]
-}
-
-export function vertexArrayInterpolate(vtxArray1: vertexArray, vtxArray2: vertexArray, weight): vertexArray {
-	let interpolatedVertexArray: vertexArray = []
-	for (let i = 0; i < vtxArray1.length; i++) {
-		interpolatedVertexArray.push(
-			vertexInterpolate(vtxArray1[i], vtxArray2[i], weight)
-		)
-	}
-	return interpolatedVertexArray
 }
 
 export function vertexArrayImageUnder(vtxArray: vertexArray, transform: Transform): vertexArray {
