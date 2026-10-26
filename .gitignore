@@ -4,3 +4,5 @@ dist/*
 node_modules/*
 tsconfig.tsbuildinfo
 
+src/.DS_Store
+node_modules/.DS_Store
