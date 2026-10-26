@@ -4,6 +4,7 @@ import { deepCopy } from '@bhbr/copycat'
 import { TAU, PI, DEGREES } from './constants.js'
 import { vertex, vertexOrigin, vertexIsZero, vertexX, vertexY, vertexOpposite, vertexAdd, vertexSubtract, vertexCentrallyRotatedBy, vertexCentrallyScaledBy, vertexTranslatedBy, vertexInterpolate } from './vertex.js'
 
+
 export class Transform extends BetterObject {
 /*
 A Transform describes the positioning of a Mobject relative to its parent. Transforms compose as mobjects are nested into each other.
@@ -136,15 +137,6 @@ A Transform describes the positioning of a Mobject relative to its parent. Trans
 			 && Math.abs(this.e() - t.e()) < tolerance
 			 && Math.abs(this.f() - t.f()) < tolerance)
 	}
-
-
-
-
-
-
-
-
-
 
 
 }

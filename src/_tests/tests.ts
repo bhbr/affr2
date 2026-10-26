@@ -1,5 +1,5 @@
 
-import { vertexIsCloseTo, vertexEquals, vertexOrigin, Transform, DummyTransform } from '../index.js'
+import { vertexIsCloseTo, vertexEquals, vertexOrigin, Transform } from '../index.js'
 import { AssertionTest, BundledTest, ExecutionTest } from '@bhbr/tsts'
 import { BetterObject } from '@bhbr/better-things'
 
@@ -28,38 +28,6 @@ export const vertexTest = new BundledTest({
 				let v = vertexOrigin()
 				return vertexEquals(v, [0, 0])
 			}
-		}),
-
-		 new ExecutionTest({
-			name: 'Dummy',
-			function: function() {
-				class Dummy extends BetterObject {
-					angle: number
-					defaults(): object {
-						return {
-							angle: 0
-						}
-					}
-				}
-				let d = new Dummy()
-			}
-		}),
-
-		new ExecutionTest({
-			name: 'DummyTransform can be instantiated with no arguments',
-			function: function() {
-				let t = new DummyTransform()
-			},
-			catchErrors: true
-		}),
-
-		new ExecutionTest({
-			name: 'DummyTransform can be copied from itself',
-			function: function() {
-				let t = new DummyTransform()
-				t.copyFrom(t)
-			},
-			catchErrors: true
 		}),
 
 		new ExecutionTest({

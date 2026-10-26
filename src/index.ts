@@ -4,19 +4,6 @@ import { BetterObject } from '@bhbr/better-things'
 import { vertex, vertexOrigin } from './vertex.js'
 
 export { Transform } from './Transform.js'
-
-export class DummyTransform extends BetterObject {
-
-	angle: number
-
-	// defaults(): object {
-	// 	return {
-	// 		angle: 0
-	// 	}
-	// }
-
-}
-
 export {
 	vertex,
 	vertexArray,
@@ -61,3 +48,6 @@ export {
 	vertexOuterProduct,
 	vertexArrayImageUnder
 } from './vertex.js'
+
+
+
